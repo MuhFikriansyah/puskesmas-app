@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Informasi Puskesmas Bojonggede</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <style>
+    /* [Style kamu tetap] */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav button {
+      margin: 0.3em;
+      padding: 10px 15px;
+      border: none;
+      background-color: #ffffff;
+      color: #007bff;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    nav button:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+    main {
+      padding: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+    .layanan-menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .layanan-menu button {
+      padding: 10px 15px;
+      background-color: #ffffff;
+      border: 1px solid #007bff;
+      border-radius: 20px;
+      color: #007bff;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .layanan-menu button:hover {
+      background-color: #007bff;
+      color: #ffffff;
+    }
+    .layanan-detail {
+      background-color: #f4f8fc;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      margin-top: 10px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .gallery img {
+      width: calc(33.333% - 10px);
+      height: auto;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      margin-top: 20px;
+    }
+    form input, form select {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    form button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Puskesmas Bojonggede</h1>
+    <nav>
+      <button onclick="showSection('beranda')">Beranda</button>
+      <button onclick="showSection('jadwal')">Jadwal Dokter</button>
+      <button onclick="showSection('layanan')">Layanan</button>
+      <button onclick="showSection('biaya')">Biaya</button>
+      <button onclick="showSection('kontak')">Kontak</button>
+      <button onclick="showSection('pengaduan')">Pengaduan</button>
+
+    </nav>
+  </header>
+
+  <main>
+    <!-- Beranda -->
+    <section id="beranda" class="content-section">
+      <h2>Selamat Datang di Website Sistem Informasi Puskesmas Bojonggede</h2>
+      <p>Kami hadir untuk memberikan pelayanan kesehatan terbaik bagi masyarakat Bojonggede dan sekitarnya.</p>
+      <h3>Foto Puskesmas</h3>
+      <div class="gallery">
+        <img src="WhatsApp Image 2025-05-28 at 16.26.12_40634a3f.jpg" alt="Puskesmas 1" />
+        <img src="WhatsApp Image 2025-05-27 at 14.12.21_a8a0ceef.jpg" alt="Puskesmas 2" />
+        <img src="WhatsApp Image 2025-05-28 at 11.03.25_23cdc951.jpg" alt="Puskesmas 3" />
+      </div>
+      <h3>Foto Kegiatan</h3>
+      <div class="gallery">
+        <img src="WhatsApp Image 2025-05-27 at 14.47.04_cf07cfbe.jpg" alt="Kegiatan 1" />
+        <img src="WhatsApp Image 2025-05-27 at 14.52.49_3f2d2f66.jpg" alt="Kegiatan 2" />
+        <img src="WhatsApp Image 2025-05-28 at 14.45.11_9225cba2.jpg" alt="Kegiatan 3" />
+      </div>
+    </section>
+
+     <main>
+    <!-- Jadwal Dokter -->
+    <section id="jadwal" class="content-section">
+      <h2>Jadwal Dokter</h2>
+      <ul>
+        <li><strong>Senin:</strong> dr. Diah Aryani & dr. Chairunnisa Burhan</li>
+        <li><strong>Selasa:</strong> dr. Diah Aryani & dr. Chairunnisa Burhan</li>
+        <li><strong>Rabu:</strong> dr. Diah Aryani & dr. Chairunnisa Burhan</li>
+        <li><strong>Kamis:</strong> dr. Diah Aryani & dr. Chairunnisa Burhan</li>
+        <li><strong>Jumat:</strong> dr. Diah Aryani & dr. Chairunnisa Burhan</li>
+        <li><strong>Sabtu:</strong> dr. Diah Aryani & dr. Chairunnisa Burhan</li>
+      </ul>
+    </section>
+
+    <!-- Layanan -->
+    <section id="layanan" class="content-section hidden">
+      <h2>Layanan</h2>
+      <div class="layanan-menu">
+        <button onclick="tampilkanLayanan('usg')">USG</button>
+        <button onclick="tampilkanLayanan('konsultasi')">Konsultasi Dokter</button>
+        <button onclick="tampilkanLayanan('laboratorium')">Laboratorium</button>
+        <button onclick="tampilkanLayanan('kb')">Pemasangan KB</button>
+        <button onclick="tampilkanLayanan('vaksinasi')">Imunisasi</button>
+        <button onclick="tampilkanLayanan('surat')">Surat Keterangan Sehat</button>
+        <button onclick="tampilkanLayanan('luka')">Perawatan Luka</button>
+        <button onclick="tampilkanLayanan('ekg')">EKG</button>
+        <button onclick="tampilkanLayanan('gigi')">Tindik dan Cabut Gigi</button>
+        <button onclick="tampilkanLayanan('ibu-hamil')">Ibu Hamil</button>
+      </div>
+
+      <div id="konten-usg" class="layanan-detail hidden">
+        <h3>Jadwal USG</h3>
+        <p>Senin & Selasa: 08.00 - 12.00</p>
+      </div>
+
+      <div id="konten-konsultasi" class="layanan-detail hidden">
+        <h3>Jadwal Konsultasi Dokter</h3>
+        <p>Senin - Sabtu: 08.00 - 14.00</p>
+      </div>
+
+      <div id="konten-laboratorium" class="layanan-detail hidden">
+        <h3>Jam Operasional Laboratorium</h3>
+        <p>Setiap Hari: 08.00 - 13.00</p>
+      </div>
+
+      <div id="konten-kb" class="layanan-detail hidden">
+        <h3>Pemasangan KB</h3>
+        <p>Pelayanan KB Senin dan Sabtu</p>
+      </div>
+
+      <div id="konten-vaksinasi" class="layanan-detail hidden">
+        <h3>Imunisasi</h3>
+        <p>Setiap Hari Kamis : 07.30 - 12.00 </p>
+      </div>
+
+      <div id="konten-surat" class="layanan-detail hidden">
+        <h3>Surat Keterangan Sehat</h3>
+        <p>Pemeriksaan fisik dan tes buta warna tersedia.</p>
+      </div>
+
+      <div id="konten-luka" class="layanan-detail hidden">
+        <h3>Perawatan Luka</h3>
+        <p>Senin - Sabtu: 08.00 - 13.00</p>
+      </div>
+
+      <div id="konten-ekg" class="layanan-detail hidden">
+        <h3>Pelayanan EKG</h3>
+        <p>Senin - Sabtu: 09.00 - 11.00</p>
+      </div>
+
+      <div id="konten-gigi" class="layanan-detail hidden">
+        <h3>Penambalan dan Cabut Gigi</h3>
+        <p>Dokter gigi tersedia Setiap Senin - Sabtu : 07.30 - 12.00 </p>
+        <p>Untuk Poli Gigi Setiap harinya hanya melayani 20-25 Pasien Saja</p>
+      </div>
+
+      <div id="konten-ibu-hamil" class="layanan-detail hidden">
+        <h3>Pelayanan Ibu Hamil</h3>
+        <p>Rabu dan Jumat: 07.30 - 12.00</p>
+      </div>
+    </section>
+
+    <!-- Biaya -->
+    <section id="biaya" class="content-section hidden">
+      <h2>Biaya Tindakan</h2>
+      <ul>
+        <li>Pendaftaran Pagi-Siang : Rp 8.000</li>
+        <li>Pendaftaran Sore-Malam : Rp 30.000</li>
+        <li>Konsultasi Dokter : Rp 50.000</li>
+        <li>Pemeriksaan Surat Sehat : Rp 30.000</li>
+        <li>Perawatan luka jahitan 1/5 : Rp 24.000</li>
+        <li>Perawatan luka jahitan 6-10 : Rp 48.000</li>
+        <li>Perawatan luka tanpa jahitan : Rp 10.000</li>
+        <li>Insisi : Rp 24.000</li>
+        <li>Ganti Balutan : Rp 20.000</li>
+        <li>Ekstraksi Benda Asing : Rp 30.000</li>
+        <li>Tindik : Rp 16.000</li>
+        <li>Buka Jahitan : Rp 11.000</li>
+        <li>Ekstraksi Kuku : Rp 24.000</li>
+        <li>Cabut Gigi Sulung Topikal : Rp 40.000</li>
+        <li>Cabut Gigi Sulung Suntik : Rp 50.000</li>
+        <li>Cabut Gigi Tetap : Rp 50.000</li>
+        <li>Cabut Gigi Tetap Komplikasi : Rp 150.000</li>
+        <li>Tambal Gigi Sementara : Rp 30.000</li>
+        <li>Tambal Gigi Endo : Rp 40.000</li>
+        <li>Pelayanan EKG : Rp 55.000</li>
+        <li>USG Pagi : Rp 50.000</li>
+        <li>USG Sore : Rp 150.000</li>
+        <li>Doppler Detak Jantung Bayi : Rp 10.000</li>
+        <li>Pemasangan IUD : Rp 164.500</li>
+        <li>Pencabutan IUD : Rp 63.000</li>
+        <li>Pemasangan Implan : Rp 314.000</li>
+        <li>Pencabutan Implan : Rp 94.000</li>
+        <li>Suntik KB 3 Bulan : Rp 25.000</li>
+        <li>Suntik KB 1 Bulan : Rp 10.000</li>
+        <li>Test Buta Warna : Rp 20.000</li>
+        <li>Pemeriksaan Calon Pengantin & Imunisasi : Rp 16.000</li>
+      </ul>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="content-section hidden">
+      <h2>Kontak</h2>
+      <p>Alamat: Jl. Raya Bojonggede No.26</p>
+      <p>Telepon: (021) 8780053</p>
+      <p>Sosial Media</p>
+      <p>Instagram : Puskesmas Bojonggede</p>
+      <p>Untuk Pendaftaran Online</p>
+      <p>Pasien BPJS menggunakan Mobile JKN</p>
+      <p>Pasien Umum Menggunakan Klinisia</p>
+      <p>Download Aplikasinya di Appstore atau PlayStore</p>
+      <p>Hotline : 0823-1092-7889</p>
+    </section>
+
+     <!-- Pengaduan -->
+<section id="pengaduan" class="content-section hidden">
+  <h2>Formulir Pengaduan Masyarakat</h2>
+  <form onsubmit="kirimPengaduan(event)">
+    <label>Nama Lengkap:</label><br />
+    <input type="text" id="nama" required><br />
+
+    <label>Isi Pengaduan:</label><br />
+    <input type="text" id="pesan" required><br />
+
+    <button type="submit">Kirim ke WhatsApp</button>
+  </form>
+</section>
+
+  </main>
+
+    <footer>
+    <p>&copy; 2025 Puskesmas Bojonggede</p>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll(".content-section");
+      sections.forEach(section => section.classList.add("hidden"));
+      document.getElementById(id).classList.remove("hidden");
+    }
+
+    function tampilkanLayanan(id) {
+      const semuaKonten = document.querySelectorAll('.layanan-detail');
+      semuaKonten.forEach(konten => konten.classList.add('hidden'));
+      const kontenAktif = document.getElementById('konten-' + id);
+      if (kontenAktif) kontenAktif.classList.remove('hidden');
+    }
+
+    function kirimPengaduan(event) {
+  event.preventDefault();
+  const nama = document.getElementById("nama").value;
+  const pesan = document.getElementById("pesan").value;
+
+  const nomor = "6282310927889";
+  const teks = `Halo Admin Puskesmas, saya ${nama}. Saya ingin menyampaikan pengaduan:\n\n${pesan}`;
+
+  const url = "https://api.whatsapp.com/send/?phone=6282310927889&text&type=phone_number&app_absent=0";
+window.open(url, "_blank");
+
+}
+
+    // Tampilkan Beranda sebagai default saat pertama kali dibuka
+    window.onload = () => {
+      showSection('beranda');
+    };
+  </script>
+</body>
+</html>
